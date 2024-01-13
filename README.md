@@ -13,27 +13,26 @@ Tutorial ini adalah lanjutan dari [automation with jenkins](https://github.com/r
 ```sh
 docker network create sonar_network
 
-docker run -d \
-	--name postgres-14 \
-	-e POSTGRES_USER=restuwahyu13 \
-	-e POSTGRES_PASSWORD=restuwahyu13 \
-	-v postgresql:/var/lib/postgresql \
+docker run -d --name postgres-14 \
+  -e POSTGRES_USER=restuwahyu13 \
+  -e POSTGRES_PASSWORD=restuwahyu13 \
+  -v postgresql:/var/lib/postgresql \
   -v postgresql_data:/var/lib/postgresql/data \
-	--network sonar_network \
-	--restart=always \
-	-d postgres:14-alpine
+  --network sonar_network \
+  --restart=always \
+  postgres:14-alpine
 
 docker run -d --name sonarqube-lts-community \
-    -p 9000:9000 \
-    -e SONAR_JDBC_URL=jdbc:postgresql://<ip docker container postgres>:5432/postgres \
-    -e SONAR_JDBC_USERNAME=restuwahyu13 \
-    -e SONAR_JDBC_PASSWORD=restuwahyu13 \
-    -v sonarqube_data:/opt/sonarqube/data \
-    -v sonarqube_extensions:/opt/sonarqube/extensions \
-    -v sonarqube_logs:/opt/sonarqube/logs \
-    --network sonar_network \
-    --link postgres-14 \
-    -d sonarqube:lts-community
+  -p 9000:9000 \
+  -e SONAR_JDBC_URL=jdbc:postgresql://<ip docker container postgres>:5432/postgres \
+  -e SONAR_JDBC_USERNAME=restuwahyu13 \
+  -e SONAR_JDBC_PASSWORD=restuwahyu13 \
+  -v sonarqube_data:/opt/sonarqube/data \
+  -v sonarqube_extensions:/opt/sonarqube/extensions \
+  -v sonarqube_logs:/opt/sonarqube/logs \
+  --network sonar_network \
+  --link postgres-14 \
+  sonarqube:lts-community
 ```
 
 ## Install Sonar Scanner
