@@ -1,0 +1,38 @@
+{
+	"name": "devsecops-with-jenkins",
+	"version": "1.0.0",
+	"description": "DecsecOps implementation with jenkins",
+	"main": "index.js",
+	"scripts": {
+		"discard": "rimraf dist",
+		"build": "tsc -P tsconfig.json",
+		"start": "./dist/index.js",
+		"dev": "tsnd --poll --respawn --watch src/**/*.ts src/index.ts",
+		"test": "mocha",
+		"cov": "nyc -r=lcov npm test"
+	},
+	"keywords": [
+		"node",
+		"express"
+	],
+	"author": "restuwahyu13",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.3.11",
+		"@types/chai-http": "^4.2.0",
+		"@types/express": "^4.17.21",
+		"@types/mocha": "^8.2.3",
+		"@types/node": "^14.18.63",
+		"chai": "^4.4.1",
+		"chai-http": "^4.4.0",
+		"mocha": "^8.4.0",
+		"nyc": "^15.1.0",
+		"rimraf": "^5.0.5",
+		"ts-node": "^10.9.2",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^4.9.5"
+	}
+}

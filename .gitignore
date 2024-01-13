@@ -1,0 +1,7 @@
+node_modules/**
+dist
+coverage
+.Ds_Store
+.env
+.nyc_output
+**/*.js.map

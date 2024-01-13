@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    container_name: express-api
+    restart: always
+    image: registry.gitlab.com/restuwahyu13/express-api:v1
+    ports:
+      - 3000:3000

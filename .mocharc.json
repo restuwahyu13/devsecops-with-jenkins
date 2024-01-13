@@ -1,0 +1,14 @@
+{
+	"spec": "**/*.spec.ts",
+	"require": "ts-node/register",
+	"extension": ["ts"],
+	"inline-diffs ": true,
+	"full-trace": true,
+	"recursive": true,
+	"color": true,
+	"exit": true,
+	"slow": 20,
+	"retries": 2,
+	"timeout": 25000,
+	"ignore": ["node_modules", "dist", "coverage", ".nyc_output"]
+}

@@ -1,0 +1,16 @@
+node_modules
+dist
+tests
+coverage
+.Ds_Store
+.env
+.mocharc.json
+.trivyignore
+.gitignore
+.nyc_output
+Jenkinsfile
+Dockerfile
+sonar-project.properties
+**/*.yml
+**/*.js.map
+**/*.md
