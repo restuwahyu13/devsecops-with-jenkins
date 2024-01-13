@@ -161,7 +161,7 @@ pipeline {
       }
     }
 
-    stage('App Release') {
+    stage('Application Release') {
       steps {
         withCredentials([
             usernamePassword(usernameVariable: 'SSH_USERNAME', passwordVariable: 'SSH_PASSWORD', credentialsId: 'ssh_credentials_id'),
