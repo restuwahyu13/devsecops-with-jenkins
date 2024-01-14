@@ -31,6 +31,7 @@ docker run -d --name sonarqube-lts-community \
   -v sonarqube_extensions:/opt/sonarqube/extensions \
   -v sonarqube_logs:/opt/sonarqube/logs \
   --network sonar_network \
+  --restart=always \
   --link postgres-14 \
   sonarqube:lts-community
 ```
