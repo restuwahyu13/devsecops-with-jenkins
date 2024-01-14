@@ -189,7 +189,7 @@ pipeline {
                 then
                   cat ${DOCKER_COMPOSE_PROD_FILE}
                 else
-                  git clone https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@gitlab.com/restuwahyu13/node-helloworld-api.git
+                  git clone https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@gitlab.com/restuwahyu13/devsecops-with-jenkins-api.git
                   touch ${DOCKER_COMPOSE_PROD_FILE}
               fi
 
